@@ -4,6 +4,15 @@
 #include "CControl.h"
 #include "opencv.hpp"
 
+
+/** CBase4618.h
+*
+* Base Class for mini games
+*
+* @author Arbab Ahmed
+*
+* @version 0.1 -- 07 Feb 2019
+*/
 class CBase4618
 {
 public:

@@ -19,8 +19,8 @@ public:
 	*
 	*/
 	void printMenu();
-	
-	Serial _com; 
+
+	Serial _com;
 
 	CControl();
 	~CControl();
@@ -37,7 +37,7 @@ public:
 	* @param channel   The channel this is on
 	* @param result    The output from this channel
 	*
-	* 
+	*
 	*/
 	bool get_data(int type, int channel, int &result);
 
@@ -60,5 +60,7 @@ public:
 	*
 	*/
 	void get_analog(float &x, float &y);
+
+	void get_button(int b, int &bState);
 
 };

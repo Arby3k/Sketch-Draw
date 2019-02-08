@@ -20,8 +20,6 @@ public:
 	CSketch(int, int);
 	~CSketch();
 
-
-
 	/** Update things
 	*
 	*

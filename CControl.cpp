@@ -53,7 +53,7 @@ bool CControl::get_data(int type, int channel, int &result) {
 
 	// Send TX string
 	_com.write(tx_str.c_str(), tx_str.length());
-	Sleep(10); // wait for ADC conversion, etc. May not be needed?
+	Sleep(1); // wait for ADC conversion, etc. May not be needed?
 
 	rx_str = "";
 	// start timeout count
@@ -92,7 +92,7 @@ bool CControl::set_data(int type, int channel, int val) {
 
 	// Send TX string
 	_com.write(tx_str.c_str(), tx_str.length());
-	Sleep(10); // wait for ADC conversion, etc. May not be needed?
+	Sleep(1); // wait for ADC conversion, etc. May not be needed?
 
 	rx_str = "";
 	// start timeout count
@@ -109,7 +109,7 @@ bool CControl::set_data(int type, int channel, int val) {
 		}
 	}
 
-	printf("\nRX: %s", rx_str.c_str());
+	//printf("\nRX: %s", rx_str.c_str());
 
 	return true;
 
@@ -124,4 +124,32 @@ void CControl::get_analog(float &x, float &y) {
 	
 	CControl::get_data(1, 9, yNow);
 	y = yNow;
+}
+
+
+void CControl::get_button(int b, int &bState) {
+
+	int data;
+	int newData = 1;
+	int counter = 1;
+	
+		get_data(0, b, data);
+
+		if (data == newData)
+			counter = 1;
+		else {
+			counter -= 1;
+			if (counter == 0) {
+				newData = data;
+
+				if (newData == 0 && counter == 0) {
+					bState = 1;
+					Sleep(10);
+					counter = 1;
+					//cout << "Button has been pressed: " << count << "times\r";
+				}
+			}
+
+		}
+
 }
