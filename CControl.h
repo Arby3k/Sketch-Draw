@@ -31,7 +31,7 @@ public:
 	*/
 	void init_com(int comport);
 
-	/** Writes a string of bytes to the serial port to get data according to type selected
+	/** Read a string of bytes to the serial port to get data according to type selected
 	*
 	* @param type      DIGITAL ANALOG or SERVO
 	* @param channel   The channel this is on
@@ -51,7 +51,14 @@ public:
 	*/
 	bool set_data(int type, int channel, int val);
 
-
+	/** Reads a string of bytes to the serial port to set data according to type selected
+	*
+	* @param type      DIGITAL ANALOG or SERVO
+	* @param channel   The channel this is on
+	* @param val       The value being set to this channel
+	*
+	*
+	*/
 	void get_analog(float &x, float &y);
 
 };
