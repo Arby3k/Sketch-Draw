@@ -2,27 +2,12 @@
 #include "CBase4618.h"
 
 
-CBase4618::CBase4618 (CControl _mCControl, cv::Mat _mCanvas)
-{
-	mCControl = _mCControl;
-	mCanvas = _mCanvas;
-}
 
 CBase4618::CBase4618() {
 
 }
 
 CBase4618::~CBase4618()
-{
-
-}
-
-void CBase4618::update()
-{
-
-}
-
-void CBase4618::draw()
 {
 
 }

@@ -12,15 +12,15 @@ protected:
 	cv::Mat mCanvas;
 
 public:
-	CBase4618(CControl mCControl, cv::Mat mCanvas);
+	//CBase4618(CControl mCControl, cv::Mat mCanvas);
 	
 	CBase4618();
 
 	~CBase4618();
 
-	virtual void update();
+	virtual void update() = 0;
 
-	virtual void draw();
+	virtual void draw() = 0;
 
 	void run();
 };
