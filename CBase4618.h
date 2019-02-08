@@ -6,10 +6,6 @@
 
 class CBase4618
 {
-	
-protected:
-
-
 public:
 
 	CBase4618();

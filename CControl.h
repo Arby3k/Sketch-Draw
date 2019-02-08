@@ -51,4 +51,7 @@ public:
 	*/
 	bool set_data(int type, int channel, int val);
 
+
+	void get_analog(float &x, float &y);
+
 };

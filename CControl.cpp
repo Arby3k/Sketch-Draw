@@ -31,6 +31,10 @@ CControl::CControl()
 }
 CControl::~CControl()
 {
+	//imitation is the highest form of flattery
+	set_data(0, 37, 0);
+	set_data(0, 38, 0);
+	set_data(0, 39, 0);
 }
 
 void CControl::init_com(int comport) {
@@ -111,3 +115,13 @@ bool CControl::set_data(int type, int channel, int val) {
 
 }
 
+void CControl::get_analog(float &x, float &y) {
+	int xNow;
+	int yNow;
+
+	CControl::get_data(1, 15, xNow);
+	x = xNow;
+	
+	CControl::get_data(1, 9, yNow);
+	y = yNow;
+}

@@ -17,13 +17,16 @@ CSketch::~CSketch()
 }
 
 void CSketch::update()
-{
-	xPosition = _cctrl.get_analog(15);
-	yPosition = 100 - _cctrl.get_analog(9);
+{/*
+	float posX;
+	float posY;
+	int BGR = 1;
 
-	int data;
+	mCControl.get_analog(posX, posY );
+	
+
 	//int color = 1;
-	_cctrl.get_data(0, 33, data);
+	mCControl.get_data(0, 33, data);
 
 	//if (data == 0) {
 	if (btnPressed(0)) {
@@ -33,27 +36,28 @@ void CSketch::update()
 	}
 	if (color == 1)
 	{
-		_cctrl.set_data(0, 39, 1);
-		_cctrl.set_data(0, 38, 0);
-		_cctrl.set_data(0, 37, 0);
+		mCControl.set_data(0, 39, 1);
+		mCControl.set_data(0, 38, 0);
+		mCControl.set_data(0, 37, 0);
 
 	}
 	else if (color == 2)
 	{
-		_cctrl.set_data(0, 39, 0);
-		_cctrl.set_data(0, 38, 1);
-		_cctrl.set_data(0, 37, 0);
+		mCControl.set_data(0, 39, 0);
+		mCControl.set_data(0, 38, 1);
+		mCControl.set_data(0, 37, 0);
 	}
 	else if (color == 3)
 	{
-		_cctrl.set_data(0, 39, 0);
-		_cctrl.set_data(0, 38, 0);
-		_cctrl.set_data(0, 37, 1);
+		mCControl.set_data(0, 39, 0);
+		mCControl.set_data(0, 38, 0);
+		mCControl.set_data(0, 37, 1);
 	}
 	int clear;
-	_cctrl.get_data(0, 32, clear);
+	mCControl.get_data(0, 32, clear);
 	if (clear == 0)
 		mCanvas = cv::Mat::zeros(mCanvas.size(), mCanvas.type());
+		*/
 }
 
 void CSketch::draw()
