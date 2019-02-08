@@ -8,12 +8,10 @@ class CBase4618
 {
 	
 protected:
-	CControl mCControl;
-	cv::Mat mCanvas;
+
 
 public:
-	//CBase4618(CControl mCControl, cv::Mat mCanvas);
-	
+
 	CBase4618();
 
 	~CBase4618();
@@ -23,5 +21,9 @@ public:
 	virtual void draw() = 0;
 
 	void run();
+
+	CControl mCControl;
+	cv::Mat mCanvas;
+
 };
 

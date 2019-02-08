@@ -24,7 +24,6 @@ public:
 
 	CControl();
 	~CControl();
-private:
 
 	/** Initiates comport.
 	*

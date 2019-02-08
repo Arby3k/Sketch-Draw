@@ -132,7 +132,6 @@ int main(int argc, char* argv[])
 	*/
 
 	CSketch etch(800, 5);
-
 	etch.run();
 
 	return 0;
