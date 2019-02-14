@@ -20,6 +20,7 @@
 #include "Cbase4618.h"
 #include "CControl.h"
 #include "CSketch.h"
+#include "CPong.h"
 
 using namespace std;
 enum type { DIGITAL, ANALOG, SERVO };
@@ -130,8 +131,11 @@ int main(int argc, char* argv[])
 
 	*/
 
-	CSketch etch(800, 5);
-	etch.run();
+//	CSketch etch(800, 5);
+//	etch.run();
+
+	CPong pGame(1000, 800, 3);
+	pGame.run();
 
 	return 0;
 
