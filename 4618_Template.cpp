@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <thread>
 #include <stdlib.h>
+
 #include <conio.h>
 
 
@@ -32,7 +33,7 @@ int main(int argc, char* argv[])
 	//test_com();
 	//do_image();
 	//do_video ();
-    //clientserver();
+	//clientserver();
 
 	//MSP.init_com(5);
 	// Old code
@@ -78,7 +79,7 @@ int main(int argc, char* argv[])
 				MSP.set_data(SERVO, 0, 160);
 				Sleep(1000);
 			} while (1);
-			
+
 			break;
 		}
 		case 'B':
@@ -87,14 +88,14 @@ int main(int argc, char* argv[])
 			int counter = 1;
 			while (1) {
 				MSP.get_data(DIGITAL, 33, data);
-							
+
 					if (data == newData)
 						counter = 1;
 					else {
 						counter -= 1;
 						if (counter == 0) {
 							newData = data;
-							
+
 							if (newData == 0 && counter == 0) {
 								count++;
 								Sleep(30);
@@ -102,10 +103,10 @@ int main(int argc, char* argv[])
 								cout << "Button has been pressed: " << count << "times\r";
 							}
 						}
-						
+
 					}
 
-				
+
 			}
 			break;
 		}
@@ -131,12 +132,56 @@ int main(int argc, char* argv[])
 
 	*/
 
-//	CSketch etch(800, 5);
-//	etch.run();
+	char inputSelect;
 
-	CPong pGame(1000, 800, 3);
-	pGame.run();
+	do {
 
-	return 0;
+		std::cout << "**************************************** \n"
+			<< "Embedded System Control \n"
+			<< "**************************************** \n\n"
+			<< "(A)stroids \n"
+			<< "(S)ketch App\n"
+			<< "(P)ong \n"
+			<< "(Q)uit \n"
+			<< "\nCommand:";
 
+		cin >> inputSelect;
+
+		switch (inputSelect) {
+
+		case 'A':
+		case 'a': {
+
+			break;
+		}
+
+		case 'S':
+		case 's': {
+			CSketch etch(800, 5);
+			etch.run();
+			break;
+		}
+
+		case 'P':
+		case 'p': {
+			CPong pGame(1000, 800, 5);
+			pGame.run();
+			break;
+		}
+
+		case 'Q':
+		case 'q': {
+			cout << "Quiting" << endl;
+			exit(0);
+			break;
+		}
+		default: {
+			cout << "Command not found\n";
+			inputSelect = 0;
+			break;
+		}
+		}
+
+	} while (inputSelect == 'Y' || inputSelect == 'y' || inputSelect == 0);
 }
+

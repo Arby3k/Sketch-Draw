@@ -7,7 +7,14 @@ class CPong:public CBase4618{
 
 public:
 
-
+	/** CPong.h
+	*
+	* A very simple game of pong
+	*
+	* @author Arbab Ahmed
+	*
+	* @version 0.1 -- 14 Feb 2019
+	*/
 	CPong(int, int, int);
 	~CPong();
 
@@ -32,5 +39,10 @@ private:
 
 	float prevX;
 	float prevY;
+
+	 float rawX;
+	 float rawY;
+	 float posX;
+	 float posY;
 };
 
