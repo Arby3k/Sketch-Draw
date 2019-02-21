@@ -5,6 +5,7 @@
 #include <thread>
 #include <stdlib.h>
 
+
 #include <conio.h>
 
 
@@ -14,14 +15,21 @@
 
 // OpenCV Include
 #include "opencv.hpp"
-
 // OpenCV Library
 #pragma comment(lib,".\\opencv\\lib\\opencv_world310d.lib")
+
+
+//SDL Library
+#include "SDL.h"
+
 
 #include "Cbase4618.h"
 #include "CControl.h"
 #include "CSketch.h"
 #include "CPong.h"
+#include "CAstroids.h"
+
+
 
 using namespace std;
 enum type { DIGITAL, ANALOG, SERVO };
@@ -132,6 +140,16 @@ int main(int argc, char* argv[])
 
 	*/
 
+	SDL_Init(SDL_INIT_EVERYTHING);
+	//SDL_Window *window = SDL_CreateWindow("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1000, 800, SDL_WINDOW_SHOWN);
+	//SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+
+	//SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+	//SDL_RenderClear(renderer);
+	//SDL_RenderPresent(renderer);
+	//SDL_Delay(300);
+
+
 	char inputSelect;
 
 	do {
@@ -151,20 +169,21 @@ int main(int argc, char* argv[])
 
 		case 'A':
 		case 'a': {
-
+			CAstroids aGame(3);
+			aGame.run();
 			break;
 		}
 
 		case 'S':
 		case 's': {
-			CSketch etch(800, 5);
+			CSketch etch(800, 3);
 			etch.run();
 			break;
 		}
 
 		case 'P':
 		case 'p': {
-			CPong pGame(1000, 800, 5);
+			CPong pGame(1000, 800, 3);
 			pGame.run();
 			break;
 		}
@@ -183,5 +202,7 @@ int main(int argc, char* argv[])
 		}
 
 	} while (inputSelect == 'Y' || inputSelect == 'y' || inputSelect == 0);
+	return 0;
+
 }
 

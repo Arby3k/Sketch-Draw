@@ -13,11 +13,19 @@ public:
 	CSketch(int, int);
 	~CSketch();
 
-
+	/** update the screen things
+	*
+	*
+	*
+	*/
 	void update();
 
 
-
+	/** draw things
+	*
+	*
+	*
+	*/
 	void draw();
 
 	int BGR;

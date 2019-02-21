@@ -43,6 +43,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Arbab\Documents\Dev\SDL2_image-2.0.4\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Arbab\Documents\Dev\SDL2_image-2.0.4\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -53,12 +55,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\opencv\include;.\opencv\include\opencv2;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Arbab\Documents\Dev\SDL2_image-2.0.4\include;C:\Users\Arbab\Documents\Dev\SDL2\include;.\opencv\include;.\opencv\include\opencv2</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Arbab\Documents\Dev\SDL2_image-2.0.4\lib\x64;C:\Users\Arbab\Documents\Dev\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -78,24 +82,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CAstroids.h" />
     <ClInclude Include="CBase4618.h" />
     <ClInclude Include="CControl.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CPong.h" />
     <ClInclude Include="CSketch.h" />
+    <ClInclude Include="Missile.h" />
+    <ClInclude Include="Rock.h" />
     <ClInclude Include="Serial.h" />
     <ClInclude Include="server.h" />
+    <ClInclude Include="Ship.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4618_Template.cpp" />
+    <ClCompile Include="CAstroids.cpp" />
     <ClCompile Include="CBase4618.cpp" />
     <ClCompile Include="CControl.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CPong.cpp" />
     <ClCompile Include="CSketch.cpp" />
+    <ClCompile Include="Missile.cpp" />
+    <ClCompile Include="Rock.cpp" />
     <ClCompile Include="Serial.cpp" />
     <ClCompile Include="server.cpp" />
+    <ClCompile Include="Ship.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>

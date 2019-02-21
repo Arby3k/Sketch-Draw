@@ -61,7 +61,7 @@ void CSketch::update()
 	//std::cout << b1 << "\r";
 	
 
-	int data;
+	static int data;
 	static int newData = 1;
 	static int counter = 1;
 
