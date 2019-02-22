@@ -3,6 +3,7 @@
 #include "CBase4618.h"
 #include "SDL.h"
 #include "SDL_image.h"
+#include "SDL_ttf.h"
 
 #include <vector>
 
@@ -39,7 +40,9 @@ private:
 
 	SDL_Renderer *renderer;
 	SDL_Window *window;
-
+	
+	TTF_Font *font;
+	
 	Ship ship;
 	std::vector <Rock> rocks;
 	std::vector <Missile> missiles;

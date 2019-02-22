@@ -9,5 +9,10 @@ public:
 
 	SDL_Rect pos; //missile postion/size
 
+	int leftM, rightM;
+	int topM, bottomM;
+
+	int hit = 0;
+
 };
 

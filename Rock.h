@@ -8,7 +8,14 @@ public:
 	~Rock();
 
 	SDL_Rect pos; //rock postion/size
-	int hit;
+
+	int leftRock, rightRock;
+	int topRock, bottomRock;
+
+	int velX;
+	int velY;
+
+	int hit =0;
 		
 };
 
